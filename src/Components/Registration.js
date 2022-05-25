@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import '../App.css';
-import {BrowserRouter as Router, Route , Link} from 'react-router-dom';
+import '../CSS/Register.css';
+import {BrowserRouter as Router, Route , Link,useNavigate} from 'react-router-dom';
 
 function Registration(){
 
-
+     let navigate = useNavigate();
     const[formValues,setFormValues] = useState({}); // {} is a object
     const handleInputChange = (event) =>
     {
@@ -26,8 +26,10 @@ const handleSubmit =() => {
         if(isUserNameFilled(formValues.userName) && ( isValidMobile(formValues.phone) && isValidEmail(formValues.email))){
             localStorage.setItem("name",formValues.userName);
             localStorage.setItem("password",formValues.password);
+            alert("You are Sucessfully Registered");
 
         }
+    }
         
         function isUserNameFilled(userName){
           
@@ -73,7 +75,7 @@ const handleSubmit =() => {
           
      }
 
-}
+
   
    return(
 
@@ -81,10 +83,12 @@ const handleSubmit =() => {
     <div className="App">
         <form>
 
-            <div>
-            <h1 id="head">Register Now</h1>
+           
+            <div className="Container">
+            <div className='RegisterDetails'>
+             <div className='Header'>
+            <h1>Register Now</h1>
             </div>
-            <div className="container">
             <input type="text"
             name="userName"
             value={formValues.userName}
@@ -121,7 +125,7 @@ const handleSubmit =() => {
             <h3>Already Registered ?</h3>   <Link to="/Login" id="link"> Login</Link>
             </div>
       
-    
+    </div>
           
            </div>
         </form>

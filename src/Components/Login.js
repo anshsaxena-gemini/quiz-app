@@ -1,9 +1,10 @@
 import React from 'react'
-import '../Login.css';
+import '../CSS/Login.css';
 import { useState } from 'react';
-import {BrowserRouter as Router, Route , Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route , Link,useNavigate} from 'react-router-dom';
 
 function Login(){
+    let navigate = useNavigate();
     const[formValues,setFormValues] = useState({}); // {} is a object
     const handleInputChange = (event) =>
     {
@@ -17,8 +18,10 @@ function Login(){
     };
     function handleSubmit()
     {
+        
         if(localStorage.getItem("name") === formValues.userName && localStorage.getItem("password") === formValues.password){
            alert("Login Success");
+           navigate('/HomePage')
         }
         else{
             alert("Invalid Credentials !");
@@ -30,7 +33,7 @@ function Login(){
      <div className='Container'>
          <div className='LoginDetails'>
              <div className='Header'>
-            <h1>LOGIN</h1>
+            <h1>Login</h1>
             </div>
             <input type="text"
             name='userName'
