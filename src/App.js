@@ -11,6 +11,7 @@ import HomePage from './Components/HomePage';
 function App() {
   return (
     <div>
+      
       <BrowserRouter>
       <Routes>
               <Route exact path='/' element={<Registration/>}></Route>
@@ -18,6 +19,7 @@ function App() {
      <Route exact path='/Login' element={<Login/>}></Route>
     
      <Route exact path='/HomePage' element={<HomePage/>}></Route>
+     <Route exact path='/QuizForm' element={<QuizForm/>}></Route>
      </Routes>
      </BrowserRouter>
     </div>
