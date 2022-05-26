@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function QuizForm(){
-  const location = useLocation();
-
   const [question, setQuestion] = useState({
     title: "",
     question: "",
@@ -39,12 +37,18 @@ function QuizForm(){
 
   const addTOStorage = () => {
     localStorage.setItem(
-      location.state.user + `${question.title}`,
+      `${question.title}`,
       JSON.stringify(addQuestionDetails)
     );
-    alert("your Quiz is Created You can see it in Show Quizzes Section");
+    let code = Math.floor(100000 + Math.random() * 900000);
+    localStorage.setItem("code",code);
+    alert("Quiz Created");
+    
     setAddQuestionDetails([]);
   };
+  let data = localStorage.getItem("Angular");
+  let test  = JSON.parse(data);
+  console.log(test.option1);
   return (
    <div style={
      {
@@ -125,7 +129,7 @@ function QuizForm(){
             </br>
             <button
                
-                type="submit"
+                type="button"
                 onClick={addEvent}
                 style={{ 
                   paddingLeft:'20px',
@@ -135,7 +139,7 @@ function QuizForm(){
               > Add Question </button>
               <button
               
-                type="submit"
+                type="button"
                 className="btn btn-primary mt-4 "
                 onClick={addTOStorage}
                 style={{ 
@@ -145,11 +149,11 @@ function QuizForm(){
 
                  }}
               >
-                Create Quiz
+                Create Quiz 
               </button>
       
     </div>
-          
+             
            </div>
         </form>
     </div>

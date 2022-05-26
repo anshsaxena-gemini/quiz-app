@@ -7,6 +7,7 @@ import Login from './Components/Login';
 import {BrowserRouter,Route,Routes,Link} from 'react-router-dom'
 import QuizPage from './Components/QuizForm';
 import HomePage from './Components/HomePage';
+import Question from './Components/Question';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     
      <Route exact path='/HomePage' element={<HomePage/>}></Route>
      <Route exact path='/QuizForm' element={<QuizForm/>}></Route>
+     <Route exact path='/Question' element={<Question/>}></Route>
      </Routes>
      </BrowserRouter>
     </div>
