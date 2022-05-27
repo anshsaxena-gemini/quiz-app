@@ -8,6 +8,10 @@ import {BrowserRouter,Route,Routes,Link} from 'react-router-dom'
 import QuizPage from './Components/QuizForm';
 import HomePage from './Components/HomePage';
 import Question from './Components/Question';
+import ShowQuiz from './Components/ShowQuiz';
+import Scorecard from './Components/Scorecrad';
+import TakeQuiz from './Components/TakeQuiz';
+import ShowCode from './Components/ShowCode';
 
 function App() {
   return (
@@ -21,7 +25,11 @@ function App() {
     
      <Route exact path='/HomePage' element={<HomePage/>}></Route>
      <Route exact path='/QuizForm' element={<QuizForm/>}></Route>
-     <Route exact path='/Question' element={<Question/>}></Route>
+     <Route exact path='/ShowQuiz' element={<ShowQuiz/>}></Route>
+     <Route exact path='/Scorecard' element={<Scorecard/>}></Route>
+     <Route exact path='/TakeQuiz' element={<TakeQuiz/>}></Route>
+     <Route exact path='/ShowCode' element={<ShowCode/>}></Route>
+
      </Routes>
      </BrowserRouter>
     </div>

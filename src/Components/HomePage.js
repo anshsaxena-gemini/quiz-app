@@ -29,14 +29,24 @@ function HomePage() {
                 }}>QUIZ BUILDER
                 </h1>
         </div>
-        <Link to='/QuizForm'> <button style={{
+        <Link to='/Login'> <button style={{
         marginLeft:'650px',
         marginTop:'100px',
         backgroundColor:'blue',
         paddingLeft:'10px',
         paddingRight:'20px',
     
-        }}>Create a Quiz</button>
+        }}>Create a Quiz</button> 
+        </Link>
+        <Link to='/TakeQuiz'> <button style={{
+        marginLeft:'650px',
+        marginTop:'20px',
+        backgroundColor:'blue',
+        paddingLeft:'10px',
+        paddingRight:'35px',
+        
+    
+        }}>Take a Quiz</button>
            
         </Link>
     </div>

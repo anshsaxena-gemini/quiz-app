@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function QuizForm(){
   const [question, setQuestion] = useState({
@@ -11,6 +11,7 @@ function QuizForm(){
     option4: "",
     answer: "",
   });
+  const navigate = useNavigate();
 
   const [isAdded, setIsAdded] = useState(false);
 
@@ -37,18 +38,17 @@ function QuizForm(){
 
   const addTOStorage = () => {
     localStorage.setItem(
-      `${question.title}`,
+      "Quiz",
       JSON.stringify(addQuestionDetails)
     );
     let code = Math.floor(100000 + Math.random() * 900000);
     localStorage.setItem("code",code);
-    alert("Quiz Created");
+    
     
     setAddQuestionDetails([]);
+    navigate('./ShowCode');
   };
-  let data = localStorage.getItem("Angular");
-  let test  = JSON.parse(data);
-  console.log(test.option1);
+  
   return (
    <div style={
      {
