@@ -21,7 +21,7 @@ function Login(){
         
         if(localStorage.getItem("name") === formValues.userName && localStorage.getItem("password") === formValues.password){
            alert("Login Success");
-           navigate('/HomePage')
+           navigate('/QuizForm')
         }
         else{
             alert("Invalid Credentials !");
@@ -30,7 +30,18 @@ function Login(){
     }
 
     return(
-     <div className='Container'>
+     <div className='Container'
+
+     style={{
+        backgroundImage:
+        "url('https://cutewallpaper.org/21/white-background-gif/Interactive-Background-by-Denys-Loveiko-on-Dribbble.gif')",
+        height: "100vh",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+    }}
+     
+     >
          <div className='LoginDetails'>
              <div className='Header'>
             <h1>Login</h1>
@@ -54,7 +65,7 @@ function Login(){
             </div>
             <br></br>
             <div className="loginLink">
-            <h3>Not Registered ?</h3>   <Link to="/" id="link">Register</Link>
+            <h3>Not Registered ?</h3>   <Link to="/Registration" id="link">Register</Link>
             </div>
             
             

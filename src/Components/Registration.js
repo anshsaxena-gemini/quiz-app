@@ -27,6 +27,7 @@ const handleSubmit =() => {
             localStorage.setItem("name",formValues.userName);
             localStorage.setItem("password",formValues.password);
             alert("You are Sucessfully Registered");
+            navigate('/Login');
 
         }
     }
@@ -80,7 +81,16 @@ const handleSubmit =() => {
    return(
 
     
-    <div className="App">
+    <div className="App"
+    style={{
+        backgroundImage:
+        "url('https://cutewallpaper.org/21/white-background-gif/Interactive-Background-by-Denys-Loveiko-on-Dribbble.gif')",
+        height: "100vh",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+    }}
+    >
         <form>
 
            

@@ -46,14 +46,14 @@ function QuizForm(){
     
     
     setAddQuestionDetails([]);
-    navigate('./ShowCode');
+    navigate('/ShowCode');
   };
   
   return (
    <div style={
      {
       backgroundImage:
-      "url('https://blusignalsystems.com/wp-content/uploads/2016/12/Savin-NY-Website-Background-Web1.jpg')",
+      "url('https://img.freepik.com/free-vector/copy-space-wavy-white-background-layers_23-2148845469.jpg?w=2000')",
       height: "100vh",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -61,21 +61,28 @@ function QuizForm(){
      }
    }>
        {isAdded ? (
-          <h5>Question is Added</h5>
+          <h5
+          >Question is Added</h5>
         ) : null} 
         
            
         <div className="QuizForm" style={{
           textAlign:'center',
         }}>
-        <form id="form">
+        <form id="form"
+        >
 
            
-            <div className="Container">
-            <div className='QuizDetails'>
+            <div className="Container"
+    
+            >
+            <div className='QuizDetails'
+            
+            >
     
              <div className='Header'>
-            <h1>Enter Quiz Details</h1>
+            <h1
+            >Enter Quiz Details</h1>
             </div>
             
             <input
@@ -85,6 +92,7 @@ function QuizForm(){
               value={question.title}
               onChange={inputEvent}
               placeholder="Enter The Quiz Title"
+             
               /><br></br>
             <input type="text"
             name="question"

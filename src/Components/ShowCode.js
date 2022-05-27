@@ -1,6 +1,12 @@
 import React from 'react'
-
+import { useNavigate } from "react-router";
+import {Nav,Navbar,NavDropdown} from 'react-bootstrap';
 function ShowCode() {
+
+  const navigate = useNavigate();
+  const logout =() =>{
+    navigate('/HomePage');
+  }
   return (
     <div 
     style={{
@@ -13,6 +19,7 @@ function ShowCode() {
         backgroundPosition: "center",
     }}
     >
+       
     <p
     style={{
         fontSize:'35px',
@@ -20,7 +27,7 @@ function ShowCode() {
      color:'white',
     }}
     >
-        Plaese Share This Code With Participants To Start The Quiz
+        Plaese Share This Code With The Participants To Start The Quiz
     </p>
      <h1
      style={{
@@ -33,7 +40,19 @@ function ShowCode() {
          {localStorage.getItem("code")}
 
      </h1>
-    
+     <br></br>
+     <button 
+     style={{
+        paddingLeft:'50px',
+        paddingRight:'50px',
+        
+       
+     }}
+     onClick={logout}
+     >
+
+            Logout
+        </button>
 
     </div>
   )
